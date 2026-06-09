@@ -1,3 +1,4 @@
+import '../../core/utils/r2_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
@@ -154,7 +155,7 @@ class _PostsGrid extends ConsumerWidget {
               title: p.title,
               tibetan: p.tibetanTitle,
               author: p.displayAuthor,
-              thumbnailUrl: p.thumbnail,
+              thumbnailUrl: p.thumbnail != null ? R2Helper.postThumbnail(p.thumbnail!) : null,
               accentHex: p.accentColor,
               onTap: () => Navigator.push(
                 context,

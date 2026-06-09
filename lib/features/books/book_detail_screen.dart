@@ -1,3 +1,4 @@
+import '../../core/utils/r2_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
@@ -76,7 +77,7 @@ class _BookDetailScreenState extends ConsumerState<BookDetailScreen> {
                       NZBookCover(
                         title: post.title,
                         tibetan: post.tibetanTitle,
-                        thumbnailUrl: post.thumbnail,
+                        thumbnailUrl: post.thumbnail != null ? R2Helper.postThumbnail(post.thumbnail!) : null,
                         accentHex: post.accentColor,
                         width: 120,
                         height: 168,

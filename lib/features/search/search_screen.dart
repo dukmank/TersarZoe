@@ -1,3 +1,4 @@
+import '../../core/utils/r2_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
@@ -156,7 +157,7 @@ class _SearchResults extends ConsumerWidget {
                 NZBookCover(
                   title: item.title,
                   tibetan: item.tibetanTitle,
-                  thumbnailUrl: item.thumbnail,
+                  thumbnailUrl: item.thumbnail != null ? R2Helper.postThumbnail(item.thumbnail!) : null,
                   accentHex: item.accentColor,
                   width: 50,
                   height: 70,

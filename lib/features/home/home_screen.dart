@@ -7,6 +7,7 @@ import '../../shared/providers/app_providers.dart';
 import '../../shared/widgets/nz_components.dart';
 import '../books/book_detail_screen.dart';
 import '../audio/audio_player_screen.dart';
+import '../../core/utils/r2_helper.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -251,7 +252,7 @@ class _FeaturedBooksRow extends StatelessWidget {
       );
     }
     return SizedBox(
-      height: 218,
+      height: 240,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
@@ -263,7 +264,7 @@ class _FeaturedBooksRow extends StatelessWidget {
             title: b.title,
             tibetan: b.tibetanTitle,
             author: b.displayAuthor,
-            thumbnailUrl: b.thumbnail,
+            thumbnailUrl: b.thumbnail != null ? R2Helper.postThumbnail(b.thumbnail!) : null,
             accentHex: b.accentColor,
             onTap: () => Navigator.push(
               context,
