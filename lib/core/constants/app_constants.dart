@@ -6,7 +6,7 @@ class AppConstants {
 
   // Cloudflare R2 public URL (sau khi enable Public Development URL)
   static const r2BaseUrl =
-      'REPLACE_WITH_R2_PUBLIC_URL'; // dạng https://pub-xxxx.r2.dev
+      'https://pub-21e10d40043e452cb87ed6d825273d4e.r2.dev';
 
   // File paths trên R2
   static const postsPdfPath = 'posts/pdf';
